@@ -28,8 +28,7 @@ Keep `private/` beside the entry files; do not add it separately to the MATLAB p
 
 Input images must be same-size, single-channel TIFFs. Use zero-padded filenames in frame order, such as `frame_0001.tif`; filenames are sorted alphabetically. At least five frames with sufficient stable emitters are needed for initialization. Manual detection thresholds use normalized image intensities (`uint16` values divided by 65535).
 
-The [image datasets](../DATA_README.md) are stored separately. For Fig. 2, select an individual `frames/` directory.
-
+The image datasets are available on [Zenodo](https://doi.org/10.5281/zenodo.23682999).
 ## Output
 
 The script displays a 2D global trajectory with template-update markers and leaves `params`, `results`, and `trajectoryFig` in the workspace.
