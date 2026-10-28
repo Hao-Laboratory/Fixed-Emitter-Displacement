@@ -1,0 +1,33 @@
+function theory = emccd_thompson_precision(config)
+%EMCCD_THOMPSON_PRECISION EMCCD-adjusted Thompson precision in input electrons.
+
+signalADU = double(config.signalADU(:));
+targetNm = double(config.target2DNm(:));
+assert(numel(signalADU) == numel(targetNm) && all(signalADU > 0));
+gain = config.emGain;
+conversion = config.electronsPerADU;
+N = signalADU * conversion / gain;
+backgroundInput = config.backgroundADU * conversion / gain;
+readInput = config.readNoiseOutputElectron / gain;
+F2 = config.excessNoiseFactorSquared;
+s = config.psfSigmaPx;
+backgroundVarianceInput = F2 * backgroundInput + readInput^2;
+signalTermPx2 = F2 * (s^2 + 1/12) ./ N;
+backgroundTermPx2 = 8*pi*s^4 * backgroundVarianceInput ./ N.^2;
+varianceAxisNm2 = (signalTermPx2 + backgroundTermPx2) * config.pixelSizeNm^2;
+th1D = sqrt(varianceAxisNm2);
+th2D = sqrt(2 * varianceAxisNm2);
+conditionId = (1:numel(signalADU)).';
+theory = table(conditionId, targetNm, signalADU, N, ...
+    repmat(backgroundInput,size(N)), repmat(readInput,size(N)), ...
+    repmat(backgroundVarianceInput,size(N)), signalTermPx2, backgroundTermPx2, ...
+    th1D, th2D, th2D-targetNm, th2D./targetNm, ...
+    abs(th2D-targetNm) <= config.theoryVerificationToleranceNm, ...
+    'VariableNames', {'condition_id','target_2d_nm','signal_adu', ...
+    'signal_input_electron','background_input_electron_per_pixel', ...
+    'read_noise_input_electron','background_variance_input_electron2', ...
+    'signal_term_px2','background_term_px2','th_sigma_axis_nm', ...
+    'th_sigma_2d_nm','theory_minus_target_nm','theory_to_target_ratio', ...
+    'signal_target_verified'});
+end
+

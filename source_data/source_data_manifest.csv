@@ -1,0 +1,31 @@
+panel,file,description
+Fig2a,Fig2/Fig2a.csv,"Heatmap: emitter count, nominal uncertainty (nm), RMSE (nm)."
+Fig2b,Fig2/Fig2b_left.csv,RMSE curves and IQR versus effective matched count; grouped by uncertainty label.
+Fig2b,Fig2/Fig2b_right.csv,RMSE curves and IQR versus nominal uncertainty; grouped by emitter count.
+Fig2c,Fig2/Fig2c.csv,"Ground-truth and estimated XY trajectories (nm); grouped by F, R, B."
+Fig3a,Fig3/Fig3a_points.csv,"Displayed replicate dots: condition, method, jittered x coordinate, RMSE (nm)."
+Fig3a,Fig3/Fig3a_mean_sd.csv,"Mean markers and sample-SD error bars (nm); method positions are 1, 2, 3."
+Fig3b,Fig3/Fig3b.csv,Mean RMSE curves (nm) versus measured common-on fraction; no SD band is drawn.
+Fig4a,Fig4/Fig4a.csv,"Estimated and ground-truth XY trajectories (nm), also covering the insets."
+Fig4b,Fig4/Fig4b.csv,Framewise 2D error and saved 7-frame moving median (nm).
+Fig4c,Fig4/Fig4c.csv,Effective matched-fraction curve; reference lines and decoration are omitted.
+Fig5a,Fig5/Fig5a.csv,"Cumulative XY, frame-to-frame XY increments, and highlighted event points (nm)."
+Fig5a,Fig5/Fig5a_trajectory_points.csv,Saved plateau-center XY points forming the trajectory overlay (nm).
+Fig5b,Fig5/Fig5b.csv,"Cumulative XY, frame-to-frame XY increments, and highlighted event points (nm)."
+Fig5b,Fig5/Fig5b_trajectory_points.csv,Saved plateau-center XY points forming the trajectory overlay (nm).
+Fig5c,Fig5/Fig5c.csv,"Cumulative XY, frame-to-frame XY increments, and highlighted event points (nm)."
+Fig5c,Fig5/Fig5c_trajectory_points.csv,Saved plateau-center XY points forming the trajectory overlay (nm).
+"Fig6a,b",Fig6/Fig6a_b.csv,Full signed XY trajectories (nm); the magnified panel uses a subset of these values.
+Fig6c,Fig6/Fig6c.csv,"Frame-to-frame XY increment curves (nm), indexed by pair-ending frame."
+Fig7b,Fig7/Fig7b.csv,Pixel size (nm/pixel) versus RMSE (nm).
+Fig7c,Fig7/Fig7c.csv,Pixel size versus the actual plotted localization-F1 values; caption discrepancy is recorded in the local audit.
+Fig7e,Fig7/Fig7e.csv,"Nearest-neighbor cutoff (px), signed bias (nm), and IQR bounds."
+Fig7f,Fig7/Fig7f.csv,"Nearest-neighbor cutoff (px), effective matched fraction, and IQR bounds."
+Fig8b,Fig8/Fig8b.csv,FOV-grouped RMSE curves (nm); x values retain the historical 60 nm/px plotting conversion.
+Fig8c,Fig8/Fig8c.csv,Density-grouped RMSE curves (nm).
+Fig8d,Fig8/Fig8d.csv,Density-grouped effective matched-count curves; the omitted high-density 13 px point is excluded.
+Fig9a,Fig9/Fig9a.csv,Runtime categories and bar heights (ms/frame).
+Fig9b,Fig9/Fig9b.csv,Normalized runtime line and plotted lower/upper SD-band bounds.
+FigS7a,FigS7/FigS7a.csv,"Cumulative y, within-crop adjacent-frame dy, and highlighted event points (nm)."
+FigS7b,FigS7/FigS7b.csv,"Cumulative y, within-crop adjacent-frame dy, and highlighted event points (nm)."
+FigS7c,FigS7/FigS7c.csv,"Cumulative y, within-crop adjacent-frame dy, and highlighted event points (nm)."
